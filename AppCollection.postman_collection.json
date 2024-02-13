@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "979ca15b-22dd-44d1-8c90-0f8df5671114",
+		"name": "AppCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21113142"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mohammed\",\n    \"userType\":\"CUSTOMER\",\n    \"durationInYears\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"65cb69ca14537a50c9a10e98\",\n    \"totalAmount\": 50.5,\n    \"isGrocery\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bill",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPayableAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/bill/discount/65cb6e7b74a22567d745dac0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bill",
+						"discount",
+						"65cb6e7b74a22567d745dac0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJraWQiOiJmYjc3ZGFmYS0yMWY4LTRhODQtYjEwZi03ODE0M2Q5MjA4ZjMiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiYXVkIjoidGVzdCIsIm5iZiI6MTcwNzgzMTk2NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4ODg4IiwiZXhwIjoxNzA3ODc1MTY1LCJpYXQiOjE3MDc4MzE5NjUsImp0aSI6IjZhNDE2Y2E1LTE1NGYtNGU5MS05MzU2LTAxNjc3OWYwZGUxNyJ9.d6wNP8KholR99buoV2JRo6uKEydWgn48asAbLDgvhC9SSf3RZn_MhVRAi2P8-AAMuXif1CqhSlz1LZ55LoYIBWGEsy3Y8FyHCqSpPpGLVJQcc4rz8DVNMKZoEja30_gMrhVzIEtlgnZ_FIxTWP_POqbU0JwrFidNHxiWNBcPA662ABGAZ6INYT4a7ArbOdsQhWZD47FJ-6URSp6XW3-K9w_pWiLTsW3FeQqBLjF8-r6HAzFhPTu_dapxISGSSbMMd3a3PvzFsoRq_Tn6wbUPC8_JEHzqp10fl3H7EeLqCbmQ5OA5qpy-XktKj5PlT6X93raXqrV7JZM3l_TO4kwV3A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
